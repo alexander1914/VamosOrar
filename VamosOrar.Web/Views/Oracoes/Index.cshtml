@@ -1,0 +1,73 @@
+﻿@model IEnumerable<VamosOrar.Data.Models.PedidosOracoes>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+        <h2>Lista de Orações</h2>
+        <br />
+        <p>            
+            <button type="button" class="btn btn-outline-success waves-effect btn-sm create">Novo Pedido&nbsp;<i class="far fa-plus-square"></i></button>
+        </p>
+        <br />
+        <div>
+            <ul class="list-group">
+                @foreach (var item in Model)
+                {
+                    <li class="list-group-item active" aria-current="true">@Html.DisplayFor(modelItem => item.Causas)</li>
+                    <li class="list-group-item"><strong>Nome:</strong>&nbsp;@Html.DisplayFor(modelItem => item.Nome)</li>
+                    <li class="list-group-item"><strong>Responsável:</strong> &nbsp;@Html.DisplayFor(modelItem => item.Responsavel)</li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-outline-info waves-effect btn-sm details" data-id="@item.Id">Exibir&nbsp;<i class="fas fa-file"></i></button>
+                        <button type="button" class="btn btn-outline-primary waves-effect btn-sm edit" data-id="@item.Id">Editar&nbsp;<i class="fas fa-edit"></i></button>
+                        <button type="button" class="btn btn-outline-danger waves-effect btn-sm delete" data-id="@item.Id">Apagar&nbsp;<i class="fas fa-trash"></i></button>
+                    </li>
+                    <br />
+                }
+            </ul>
+        </div>    
+        
+        <div id="modal" class="modal fade" role="dialog" />
+
+        @section scripts{
+            <script>
+                $(function () {
+                    $(".create").click(function () {
+                        $("#modal").load("/Oracoes/Create", function () {
+                            $("#modal").modal();
+                        })
+                    });
+
+                    $(".details").click(function () {
+                        var id = parseInt($(this).attr("data-id"));
+
+                        $("#modal").load("/Oracoes/Details/" + id, function () {
+                            $("#modal").modal();
+                        })
+                    });
+
+                    $(".edit").click(function () {
+                        var id = parseInt($(this).attr("data-id"));
+
+                        $("#modal").load("/Oracoes/Edit/" + id, function () {
+                            $("#modal").modal();
+                        })
+                    });
+
+                    $(".delete").click(function () {
+                        var id = parseInt($(this).attr("data-id"));
+
+                        $("#modal").load("/Oracoes/Delete/" + id, function () {
+                            $("#modal").modal();
+                        })
+                    });
+
+                })
+            </script>
+        }
+
+
+
+
+

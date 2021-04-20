@@ -20,6 +20,7 @@ namespace VamosOrar.Data.Models
 
         [Required]
         [MaxLength(50)]
+        [Display(Name = "Responsável")]
         public string Responsavel { get; set; }
 
         public string DetalhesPedido { get; set; }

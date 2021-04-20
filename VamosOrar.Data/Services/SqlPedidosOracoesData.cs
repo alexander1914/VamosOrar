@@ -19,7 +19,7 @@ namespace VamosOrar.Data.Services
 
         public PedidosOracoes GetById(int id)
         {
-            return db.PedidosOracoes.FirstOrDefault(p => p.Id == id);
+            return db.PedidosOracoes.Find(id);
         }      
 
         public IEnumerable<PedidosOracoes> GetAll()

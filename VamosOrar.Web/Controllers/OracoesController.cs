@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using VamosOrar.Data.Models;
@@ -52,16 +53,27 @@ namespace VamosOrar.Web.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var model = db.GetById(id);
-            return View(model);
+
+            PedidosOracoes pedidosOracoes = db.GetById(id);
+            if (pedidosOracoes == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }            
+            return View(pedidosOracoes);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(PedidosOracoes pedidosOracoes)
         {
-            db.Update(pedidosOracoes);
+
+            if (ModelState.IsValid)
+            {
+                db.Update(pedidosOracoes);
+                return RedirectToAction("Index");
+            }
             return View(pedidosOracoes);
+            
         }
 
         [HttpGet]

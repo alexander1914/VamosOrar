@@ -34,43 +34,40 @@ namespace VamosOrar.Web.Controllers
 
         [HttpGet]
         public ActionResult Create()
-        {
+        {            
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(PedidosOracoes pedidosOracoes)
-        {
+        {            
             if (ModelState.IsValid)
             {
                 db.Add(pedidosOracoes);
+                //TempData["Message"] = "Seu pedido de oração foi salvo com sucesso";                
                 return RedirectToAction("Index");
-            }
+            }            
             return View();
         }
 
         [HttpGet]
         public ActionResult Edit(int id)
         {
-
-            PedidosOracoes pedidosOracoes = db.GetById(id);
-            if (pedidosOracoes == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }            
-            return View(pedidosOracoes);
+            var model = db.GetById(id);
+            return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(PedidosOracoes pedidosOracoes)
         {
-
+            
             if (ModelState.IsValid)
             {
                 db.Update(pedidosOracoes);
                 return RedirectToAction("Index");
+                //TempData["Message"] = "Seu pedido de oração alterado com sucesso";
             }
             return View(pedidosOracoes);
             
@@ -89,6 +86,7 @@ namespace VamosOrar.Web.Controllers
         {
             db.Delete(id);
             return RedirectToAction("Index");
+            //TempData["Message"] = "Seu pedido de oração foi apagado com sucesso";
         }
     }
 }

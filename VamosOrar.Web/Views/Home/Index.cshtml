@@ -2,7 +2,7 @@
 @using VamosOrar.Data.Models
 
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Dashboard";
 }
 
 @functions{
@@ -62,6 +62,34 @@
         return result;
     }
 
+    public int totalEspiritual()
+    {
+        List<PedidosOracoes> pedidosOracoes = new List<PedidosOracoes>();
+
+        foreach (var item in Model)
+        {
+            pedidosOracoes.Add(item);
+        }
+
+        var result = pedidosOracoes.Count(p => p.Causas == TiposCausas.Espiritual);
+
+        return result;
+    }
+
+    public int totalSentimental()
+    {
+        List<PedidosOracoes> pedidosOracoes = new List<PedidosOracoes>();
+
+        foreach (var item in Model)
+        {
+            pedidosOracoes.Add(item);
+        }
+
+        var result = pedidosOracoes.Count(p => p.Causas == TiposCausas.Sentimental);
+
+        return result;
+    }
+
     public int totalProfissional()
     {
         List<PedidosOracoes> pedidosOracoes = new List<PedidosOracoes>();
@@ -72,6 +100,76 @@
         }
 
         var result = pedidosOracoes.Count(p => p.Causas == TiposCausas.Profissional);
+
+        return result;
+    }
+
+    public int totalFinanceiro()
+    {
+        List<PedidosOracoes> pedidosOracoes = new List<PedidosOracoes>();
+
+        foreach (var item in Model)
+        {
+            pedidosOracoes.Add(item);
+        }
+
+        var result = pedidosOracoes.Count(p => p.Causas == TiposCausas.Financeiro);
+
+        return result;
+    }
+
+    public int totalDesemprego()
+    {
+        List<PedidosOracoes> pedidosOracoes = new List<PedidosOracoes>();
+
+        foreach (var item in Model)
+        {
+            pedidosOracoes.Add(item);
+        }
+
+        var result = pedidosOracoes.Count(p => p.Causas == TiposCausas.Desemprego);
+
+        return result;
+    }
+
+    public int totalMinisterial()
+    {
+        List<PedidosOracoes> pedidosOracoes = new List<PedidosOracoes>();
+
+        foreach (var item in Model)
+        {
+            pedidosOracoes.Add(item);
+        }
+
+        var result = pedidosOracoes.Count(p => p.Causas == TiposCausas.Ministerial);
+
+        return result;
+    }
+
+    public int totalSabedoria()
+    {
+        List<PedidosOracoes> pedidosOracoes = new List<PedidosOracoes>();
+
+        foreach (var item in Model)
+        {
+            pedidosOracoes.Add(item);
+        }
+
+        var result = pedidosOracoes.Count(p => p.Causas == TiposCausas.Sabedoria);
+
+        return result;
+    }
+
+    public int totalTestemunho()
+    {
+        List<PedidosOracoes> pedidosOracoes = new List<PedidosOracoes>();
+
+        foreach (var item in Model)
+        {
+            pedidosOracoes.Add(item);
+        }
+
+        var result = pedidosOracoes.Count(p => p.Causas == TiposCausas.Testemunho);
 
         return result;
     }
@@ -102,9 +200,9 @@
             </div>
         </div>
         <div class="col-md">
-            <div class="card border border-success shadow-0 mb-3" style="max-width: 18rem">
+            <div class="card border border-secondary shadow-0 mb-3" style="max-width: 18rem">
                 <div class="card-header">Causa</div>
-                <div class="card-body text-success">
+                <div class="card-body text-secondary">
                     <h5 class="card-title">Saúde</h5>
                     <p class="card-text">
                         @totalSaude()
@@ -112,52 +210,110 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md">
-                <div class="card border border-danger shadow-0 mb-3" style="max-width: 18rem">
-                    <div class="card-header">Causa</div>
-                    <div class="card-body text-danger">
-                        <h5 class="card-title">COVID-19</h5>
-                        <p class="card-text">
-                            @totalCovid19()
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="card border border-warning shadow-0 mb-3" style="max-width: 18rem">
-                    <div class="card-header">Causa</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Profissional</h5>
-                        <p class="card-text">
-                            @totalProfissional()
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="card border border-info shadow-0 mb-3" style="max-width: 18rem">
-                    <div class="card-header">Causa</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Familiar</h5>
-                        <p class="card-text">
-                            0
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card border border-light shadow-0 mb-3" style="max-width: 18rem">
+    </div>        
+    <div class="row">
+         <div class="col-md">
+              <div class="card border border-danger shadow-0 mb-3" style="max-width: 18rem">
+                  <div class="card-header">Causa</div>
+                  <div class="card-body text-danger">
+                      <h5 class="card-title">COVID-19</h5>
+                      <p class="card-text">
+                          @totalCovid19()
+                      </p>
+                  </div>
+              </div>
+          </div>
+         <div class="col-md">
+              <div class="card border border-secondary shadow-0 mb-3" style="max-width: 18rem">
+                  <div class="card-header">Causa</div>
+                  <div class="card-body text-secondary">
+                      <h5 class="card-title">Espiritual</h5>
+                      <p class="card-text">
+                          @totalEspiritual()
+                      </p>
+                  </div>
+              </div>
+          </div>
+         <div class="col-md">
+              <div class="card border border-secondary shadow-0 mb-3" style="max-width: 18rem">
+                  <div class="card-header">Causa</div>
+                  <div class="card-body text-secondary">
+                      <h5 class="card-title">Sentimental</h5>
+                      <p class="card-text">
+                          @totalSentimental()
+                      </p>
+                  </div>
+              </div>
+          </div>            
+     </div>
+    <div class="row">
+        <div class="col-md">
+            <div class="card border border-success shadow-0 mb-3" style="max-width: 18rem;">
                 <div class="card-header">Causa</div>
-                <div class="card-body">
-                    <h5 class="card-title">Sentimental</h5>
+                <div class="card-body text-success">
+                    <h5 class="card-title">Profissional</h5>
                     <p class="card-text">
-                        0
+                        @totalProfissional()
                     </p>
                 </div>
             </div>
-
+        </div>        
+        <div class="col-md">
+            <div class="card border border-success shadow-0 mb-3" style="max-width: 18rem;">
+                <div class="card-header">Causa</div>
+                <div class="card-body text-success">
+                    <h5 class="card-title">Financeiro</h5>
+                    <p class="card-text">
+                        @totalFinanceiro()
+                    </p>
+                </div>
+            </div>
+        </div>                
+        <div class="col-md">
+            <div class="card border border-danger shadow-0 mb-3" style="max-width: 18rem">
+                <div class="card-header">Causa</div>
+                <div class="card-body text-danger">
+                    <h5 class="card-title">Desemprego</h5>
+                    <p class="card-text">
+                        @totalDesemprego()
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md">
+            <div class="card border border-warning shadow-0 mb-3" style="max-width: 18rem;">
+                <div class="card-header">Causa</div>
+                <div class="card-body text-warning">
+                    <h5 class="card-title">Ministerial</h5>
+                    <p class="card-text">
+                        @totalMinisterial()
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="card border border-warning shadow-0 mb-3" style="max-width: 18rem;">
+                <div class="card-header">Causa</div>
+                <div class="card-body text-warning">
+                    <h5 class="card-title">Sabedoria</h5>
+                    <p class="card-text">
+                        @totalSabedoria()
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="card border border-primary shadow-0 mb-3" style="max-width: 18rem">
+                <div class="card-header">Causa</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title">Salvação</h5>
+                    <p class="card-text">
+                        @totalSalvacao()
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

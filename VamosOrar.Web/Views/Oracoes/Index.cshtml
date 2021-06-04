@@ -2,13 +2,13 @@
 
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Pedidos de Oração";
 }
 
-        <h2>Lista de Orações</h2>
+        <h2>Lista de Pedidos de Orações</h2>
         <br />
         <p>            
-            <button type="button" class="btn btn-outline-success waves-effect btn-sm create">Novo Pedido&nbsp;<i class="far fa-plus-square"></i></button>
+            <button type="button" data-bs-dismiss="alert" class="btn btn-outline-success waves-effect btn-sm create">Novo Pedido&nbsp;<i class="far fa-plus-square"></i></button>
         </p>
         <br />
         <div>
@@ -50,7 +50,7 @@
                     $(".edit").click(function () {
                         var id = parseInt($(this).attr("data-id"));
 
-                        $("#modal").load("/Oracoes/Edit/" + id, function () {
+                        $("#modal").load("/Oracoes/Edit?id=" + id, function () {
                             $("#modal").modal();
                         })
                     });
@@ -58,7 +58,7 @@
                     $(".delete").click(function () {
                         var id = parseInt($(this).attr("data-id"));
 
-                        $("#modal").load("/Oracoes/Delete/" + id, function () {
+                        $("#modal").load("/Oracoes/Delete?id=" + id, function () {
                             $("#modal").modal();
                         })
                     });

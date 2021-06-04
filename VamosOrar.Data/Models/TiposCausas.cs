@@ -8,16 +8,18 @@ namespace VamosOrar.Data.Models
 {
     public enum TiposCausas
     {
-        Espiritual,
-        Ministerial,
+        Salvação,
         Familiar,
+        Libertação,
+        Saúde,
+        Covid19,
+        Espiritual,
+        Sentimental,
         Profissional,
         Financeiro,
-        Sentimental,
-        Saúde,
-        Libertação,
-        Salvação,
+        Desemprego,
+        Ministerial,
         Sabedoria,
-        Covid19
+        Testemunho
     }
 }

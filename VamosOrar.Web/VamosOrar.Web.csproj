@@ -212,7 +212,11 @@
     <None Include="Properties\PublishProfiles\VamosOrar - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\VamosOrar - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Images\Adenir.jpg" />
     <Content Include="Images\alexander.jpg" />
+    <Content Include="Images\Denise.jpg" />
+    <Content Include="Images\Gilvano.jpg" />
+    <Content Include="Images\Nathalia.jpg" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />

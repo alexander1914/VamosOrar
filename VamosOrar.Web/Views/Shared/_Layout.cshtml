@@ -21,13 +21,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="/Home/Index">Home</a>
+                        <a class="nav-link active text-white" aria-current="page" href="/Home/Dashboard">Dashboard</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="/Oracoes/Index">Pedidos Oração</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">S.O.S</a>
+                        <a class="nav-link text-white" href="/Home/SOS">S.O.S</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#">Envolvidos</a>
@@ -43,8 +43,9 @@
         {
             <div class="alert alert-success">
                 @TempData["Message"]
-            </div>            
-         }
+            </div>
+        }                                      
+
         <br />
         @RenderBody()
     </div>

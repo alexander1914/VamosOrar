@@ -13,7 +13,7 @@ namespace VamosOrar.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Dashboard()
         {
             var model = db.GetAll();
             return View(model);

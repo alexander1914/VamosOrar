@@ -18,7 +18,8 @@ namespace VamosOrar.Data.Models
         public TiposCausas Causas { get; set; }
 
         [Required]
-        [MaxLength(50)]        
+        [MaxLength(50)]
+        [Display(Name = "Responsável")]
         public string Responsavel { get; set; }
 
         public string DetalhesPedido { get; set; }

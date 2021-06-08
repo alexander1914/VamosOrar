@@ -16,7 +16,7 @@ namespace VamosOrar.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{key}",
-                defaults: new { controller = "Home", action = "Index", key = UrlParameter.Optional }
+                defaults: new { controller = "Oracoes", action = "Index", key = UrlParameter.Optional }
             );
         }
     }

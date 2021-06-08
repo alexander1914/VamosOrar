@@ -1,0 +1,12 @@
+C:\.NET\VamosOrar\VamosOrar.Data\bin\Debug\VamosOrar.Data.dll.config
+C:\.NET\VamosOrar\VamosOrar.Data\bin\Debug\VamosOrar.Data.dll
+C:\.NET\VamosOrar\VamosOrar.Data\bin\Debug\VamosOrar.Data.pdb
+C:\.NET\VamosOrar\VamosOrar.Data\bin\Debug\EntityFramework.dll
+C:\.NET\VamosOrar\VamosOrar.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\.NET\VamosOrar\VamosOrar.Data\bin\Debug\EntityFramework.xml
+C:\.NET\VamosOrar\VamosOrar.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\.NET\VamosOrar\VamosOrar.Data\obj\Debug\VamosOrar.Data.csprojAssemblyReference.cache
+C:\.NET\VamosOrar\VamosOrar.Data\obj\Debug\VamosOrar.Data.csproj.CoreCompileInputs.cache
+C:\.NET\VamosOrar\VamosOrar.Data\obj\Debug\VamosOrar.Data.csproj.CopyComplete
+C:\.NET\VamosOrar\VamosOrar.Data\obj\Debug\VamosOrar.Data.dll
+C:\.NET\VamosOrar\VamosOrar.Data\obj\Debug\VamosOrar.Data.pdb

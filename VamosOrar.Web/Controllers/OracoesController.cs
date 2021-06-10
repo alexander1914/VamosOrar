@@ -45,7 +45,7 @@ namespace VamosOrar.Web.Controllers
             if (ModelState.IsValid)
             {
                 db.Add(pedidosOracoes);
-                //TempData["Message"] = "Seu pedido de oração foi salvo com sucesso";                
+                TempData["Message"] = $"Obrigado seu pedido de oração foi salvo com sucesso: {pedidosOracoes.Responsavel}";                
                 return RedirectToAction("Index");
             }            
             return View();

@@ -25,7 +25,7 @@ namespace VamosOrar.Data.Services
         public IEnumerable<PedidosOracoes> GetAll()
         {
             return from p in db.PedidosOracoes
-                   orderby p.Nome
+                   orderby p.Id descending
                    select p;
         }
 

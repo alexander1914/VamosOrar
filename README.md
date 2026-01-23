@@ -1,7 +1,5 @@
 # Vamos Orar
 
-### I love to create many solutions to help society now
-
 - 🔭 I'm currently working on **management prayer order for my church for the moment pandemic COVID-19 to use we meetings prayer cells in 2020**
 
 <h3 align="left">Connect with me:</h3>
